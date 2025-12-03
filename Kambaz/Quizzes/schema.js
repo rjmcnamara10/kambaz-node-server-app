@@ -32,7 +32,12 @@ const schema = new mongoose.Schema({
   time_limit: Number,
   multiple_attempts: Boolean,
   number_attempts: Number,
-  show_correct_answers: String,
+  show_correct_answers: {
+    type: String,
+    required: true,
+    enum: ["IMMEDIATELY", "AFTER_DUE_DATE", "NEVER"],
+    default: "IMMEDIATELY",
+  },
   access_code: String,
   one_q_at_time: Boolean,
   webcam_required: Boolean,
