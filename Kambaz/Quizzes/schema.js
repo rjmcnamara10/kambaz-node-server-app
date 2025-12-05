@@ -6,9 +6,10 @@ const questionSchema = new mongoose.Schema({
   points: Number,
   question: String,
   type: { type: String, enum: ["MC", "TF", "FIB"], required: true },
-  options: [{ text: String, isCorrect: Boolean }], // multiple choice
-  correct: Boolean, // true/false
-  correctAnswers: [String], // fill in the blank
+  mcOptions: [String], // multiple choice
+  mcCorrect: String, // multiple choice
+  tfCorrect: Boolean, // true/false
+  fibCorrect: [String], // fill in the blank
 });
 
 const schema = new mongoose.Schema({
