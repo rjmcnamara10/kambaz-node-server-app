@@ -30,7 +30,8 @@ const schema = new mongoose.Schema({
     default: "QUIZZES",
   },
   shuffle_answers: Boolean,
-  time_limit: Number,
+  time_limit: Boolean,
+  time_limit_min: Number,
   multiple_attempts: Boolean,
   number_attempts: Number,
   show_correct_answers: {
