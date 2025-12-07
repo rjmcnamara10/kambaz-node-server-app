@@ -50,6 +50,18 @@ const schema = new mongoose.Schema({
   points: Number,
   score: Number,
   questions: [questionSchema],
+  submissions: {
+    type: Map,
+    of: {
+      attempt: Number,
+      score: Number,
+      answers: {
+        type: Map,
+        of: mongoose.Schema.Types.Mixed,
+        default: {},
+      },
+    },
+  },
 });
 
 export default schema;
